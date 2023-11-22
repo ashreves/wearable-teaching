@@ -12,7 +12,7 @@ The session on Friday focuses on **running an epidemiological analysis** using d
 
 Both sessions use [this demo pipeline]([https://github.com/OxWearables/rap_wearables](https://github.com/OxWearables/rap_wearables/tree/cdt_dec_2022)), with Thursday's session focussing on [notebook 1](https://github.com/OxWearables/rap_wearables/blob/main/1_Extract_Data.ipynb) and Friday's on notebooks 2-4.
 
-**Tutors:** Aidan Acquah, Alaina Shreves, Rosemary Walmsley
+**Tutors:** Alaina Shreves, Charlie Harper
 
 
 ## Information Governance and Security
