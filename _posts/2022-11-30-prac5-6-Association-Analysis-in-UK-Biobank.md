@@ -4,15 +4,15 @@ layout: post
 
 ## Introduction 
 
-Practical sessions on Thursday morning and Friday morning will focus on how accelerometer-derived phenotypes can be used in UK Biobank to generate epidemiological insights. 
+Practical sessions on Thursday and Friday will focus on how accelerometer-derived phenotypes can be used in UK Biobank to generate epidemiological insights. 
 
 The session on Thursday focuses on **accessing** the data. We will understand some of the non-accelerometer data available in UK Biobank, meet the [UK Biobank Research Analysis Platform](https://www.ukbiobank.ac.uk/enable-your-research/research-analysis-platform) and use it to prepare data for analysis. 
 
 The session on Friday focuses on **running an epidemiological analysis** using data from UK Biobank. 
 
-Both sessions use [this demo pipeline]([https://github.com/OxWearables/rap_wearables](https://github.com/OxWearables/rap_wearables/tree/cdt_dec_2022)), with Thursday's session focussing on [notebook 1](https://github.com/OxWearables/rap_wearables/blob/main/1_Extract_Data.ipynb) and Friday's on notebooks 2-4.
+Both sessions use a demo pipeline, with Thursday's session focussing on [notebook 1](https://github.com/OxWearables/rap_wearables/blob/main/1_Extract_Data.ipynb) and Friday's on [notebook's 2-4](https://github.com/OxWearables/rap_wearables/tree/main).
 
-**Tutors:** Alaina Shreves, Charlie Harper
+**Tutors:** Alaina Shreves, Adam Sturge, & Charlie Harper
 
 
 ## Information Governance and Security
@@ -21,13 +21,13 @@ When working with participant data, good Information Governance/Security is esse
 
 ## Practicalities: getting the notebooks onto the UK Biobank Research Analysis Platform
 
-The UK Biobank Research Analysis Platform has permanent storage. In particular, you will be using a project called 'CDT-DataChallenge-Dec22'. We'll set up a folder under 'users' for each person. Please store your files in that folder. When you first log in to the platform, you may wish to set up folders called 'data' and 'outputs' within this folder (some of the notebooks will assume you have done that). 
+The UK Biobank Research Analysis Platform has permanent storage. In particular, you will be using a project called 'cdt-datachallenge-dec23'. Within the 'users' folder, you have an individual folder. Please store your files in that folder. When you first log in to the platform, you may wish to set up folders called 'data' and 'outputs' within this folder (some of the notebooks will assume you have done that). 
 
-When you are running JupyterLab (or RStudio), you are temporarily running a cloud computer that has some temporary storage associated with it. You can transfer things from permanent storage to temporary storage and back again. **Important:** at the end of a session, before terminating your cloud computer, you need to make sure anything you need from the temporary storage is transferred over to permanent storage. If not, it will be gone! 
+When you are running JupyterLab (or RStudio) on the RAP, you are temporarily running a cloud computer that has some temporary storage associated with it. You can transfer things from permanent storage to temporary storage and back again. **Important:** at the end of a session, before terminating your cloud computer, you need to make sure anything you need from the temporary storage is transferred over to permanent storage. If not, it will be gone! 
 
 There are different ways you could get the practical materials from GitHub onto the Research Analysis Platform. Here's one: 
 
-I. Launch JupyterLab + Spark (as you will need for the Thursday practicals) 
+I. Launch JupyterLab + Spark (as you will need for the Thursday practicals)  Read how to set it up [here](https://dnanexus.gitbook.io/uk-biobank-rap/working-on-the-research-analysis-platform/using-spark-to-analyze-tabular-data).
 
 II. Open a Terminal instance from JupyterLab (File > New > Terminal) 
 
@@ -48,16 +48,16 @@ $ cd .. # We go back up one level just so as to avoid filling the rap_wearables 
 
 VI. You can now run notebooks from the repository and edit them as you like. 
 
-VII. At the end of the session, you can upload to permanent storage by running (again in the terminal): 
+VII. At the end of the session, you can upload to permanent storage (your user folder!) by running (again in the terminal): 
 ```shell
-$ dx upload -r rap_wearables --dest users/Rosemary_Walmsley32/ # Remember to change my username to yours! Also don't miss the trailing slash. 
+$ dx upload -r rap_wearables --dest users/ahshreves/ # Remember to change my username to yours! Also don't miss the trailing slash. 
 # dx is a command line client produced by DNANexus
 ```
 
 Alternatively, if you already have things in permanent storage (e.g. having previously run through the steps above), you can download them to your temporary instance using: 
 
 ```shell
-$ dx download -r users/Rosemary_Walmsley32/rap_wearables # again change the file path as appropriate
+$ dx download -r users/ahshreves/rap_wearables # again change the file path as appropriate
 ```
 
 ## Getting files between the VM and the RAP using the command line interface 
@@ -91,7 +91,7 @@ We are going to use the command line interface to transfer the file directly and
 
 5. Run `dx login` to log you in to the RAP ([Command Line Quickstart - DNAnexus Documentation](https://documentation.dnanexus.com/getting-started/cli-quickstart). You will need to enter your username and password. You may also have to select the project you want. 
 
-6. Run `dx cd users/Rosemary_Walmsley32` to navigate between directories on the RAP. [This is just an example - navigate to the folder you want, not to my folder :)] You can read more about the dx command line interface in the links, but you can also run other commands prefaced by dx (e.g. `dx ls`) 
+6. Run `dx cd users/ahshreves` to navigate between directories on the RAP. [This is just an example - navigate to the folder you want, not to my folder :)] You can read more about the dx command line interface in the links, but you can also run other commands prefaced by dx (e.g. `dx ls`) 
 
 7. To download the file my_eid_list.txt, run `dx download my_eid_list.txt`. 
 
@@ -104,11 +104,13 @@ We are going to use the command line interface to transfer the file directly and
 
 ## Troubleshooting and bugs
 
-If you have a question, speak to any of the tutors (Aidan Acquah, Alaina Shreves, Rosemary Walmsley).
+If you have a question, speak to any of the tutors (Alaina Shreves, Adam Sturge, & Charlie Harper).
 
 There are probably bugs. If you find them, please let us know!
 
 We'd also love to hear any suggestions for how we could improve these practicals for future students.
+
+Special thanks to Rosemary Walmsley for developing the original CDT RAP teaching materials.
 
 ## Reading and useful links
 
@@ -119,4 +121,4 @@ Lots of online resources are available to understand the UK Biobank study and th
 - For more about UK Biobank data collection and history, [this](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1001779) is a good summary
 - To understand some of the potential for selection bias in UK Biobank, perhaps start with [Fry et al, 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5860371/)
 - Documentation for the Research Analysis Platform: https://dnanexus.gitbook.io/uk-biobank-rap/
-- The DNANexus community: https://community.dnanexus.com/s/ (useful for troubleshooting)
+- The DNANexus community is an online collaborative space where researchers can ask questions: https://community.dnanexus.com/s/ (useful for troubleshooting)
